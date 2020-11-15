@@ -1,5 +1,7 @@
 const greeter = name => {
-    return `Hello ${name.trim()}`
+    const nameTrimmed = name.trim();
+    const nameCapitalised = nameTrimmed.charAt(0).toUpperCase() + nameTrimmed.slice(1);
+    return `Hello ${nameCapitalised}`;
 };
 
 export default greeter;
