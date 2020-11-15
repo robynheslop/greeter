@@ -1,13 +1,21 @@
 import greeter from "./greeter";
 
+const date = new Date();
+date.setHours(15);
+date.setMinutes(0);
+
 describe("greeter", () => {
     it("receives name and returns 'hello name'", () => {
-        expect(greeter("Robyn")).toBe("Hello Robyn");
+        expect(greeter("Robyn", date)).toBe("Hello Robyn");
     });
     it("returns trimmed input", () => {
-        expect(greeter("    Robyn    ")).toBe("Hello Robyn")
+        expect(greeter("    Robyn    ", date)).toBe("Hello Robyn")
     });
     it("returns first letter of name capitalised", () => {
-        expect(greeter("robyn")).toBe("Hello Robyn");
-    })
+        expect(greeter("robyn", date)).toBe("Hello Robyn");
+    });
+    it("returns Good Morning <name> if time is 06:00 - 12:00", () => {
+        date.setHours(7);
+        expect(greeter("Robyn", date)).toBe("Good Morning Robyn");
+    });
 })
