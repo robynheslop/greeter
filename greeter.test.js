@@ -21,5 +21,9 @@ describe("greeter", () => {
     it("returns Good Evening <name> if time is 18:00 - 22:00", () => {
         date.setHours(18);
         expect(greeter("Robyn", date)).toBe("Good Evening Robyn");
-    })
+    });
+    it("returns Good Night <name> if time is 22:00 - 6:00", () => {
+        date.setHours(2);
+        expect(greeter("Robyn", date)).toBe("Good Night Robyn");
+    });
 })
