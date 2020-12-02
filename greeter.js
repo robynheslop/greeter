@@ -12,6 +12,8 @@ const greeter = (name, time) => {
             return `Good Morning ${formatName(name)}`
         } else if (hour >= 18 && hour < 22) {
             return `Good Evening ${formatName(name)}`
+        } else if (hour >= 22 || hour < 6) {
+            return `Good Night ${formatName(name)}`
         }
     }
     return `Hello ${formatName(name)}`

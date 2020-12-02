@@ -25,4 +25,16 @@ describe("greeter", () => {
         let time = new Date('December 17, 1995 18:00:00')
         expect(greeter("Robyn", time)).toBe("Good Evening Robyn")
     });
+    it("returns 'Good Evening <name> if the time is 21:59:00", () => {
+        let time = new Date('December 17, 1995 21:59:00')
+        expect(greeter("Robyn", time)).toBe("Good Evening Robyn")
+    });
+    it("returns 'Good Night <name> if the time is 22:00:00", () => {
+        let time = new Date('December 17, 1995 22:00:00')
+        expect(greeter("Robyn", time)).toBe("Good Night Robyn")
+    });
+    it("returns 'Good Night <name> if the time is 05:59:00", () => {
+        let time = new Date('December 17, 1995 05:59:00')
+        expect(greeter("Robyn", time)).toBe("Good Night Robyn")
+    });
 })
