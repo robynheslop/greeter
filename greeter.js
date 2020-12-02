@@ -5,7 +5,13 @@ const formatName = name => {
     return capitalisedName;
 }
 
-const greeter = name => {
+const greeter = (name, time) => {
+    if (time) {
+        let hour = time.getHours();
+        if (hour >= 6) {
+            return `Good Morning ${formatName(name)}`
+        }
+    }
     return `Hello ${formatName(name)}`
 }
 
