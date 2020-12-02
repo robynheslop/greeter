@@ -37,4 +37,12 @@ describe("greeter", () => {
         let time = new Date('December 17, 1995 05:59:00')
         expect(greeter("Robyn", time)).toBe("Good Night Robyn")
     });
+    it("returns 'Hello <name> if the time is 12:00:00", () => {
+        let time = new Date('December 17, 1995 12:00:00')
+        expect(greeter("Robyn", time)).toBe("Hello Robyn")
+    });
+    it("returns 'Hello <name> if the time is 17:00:00", () => {
+        let time = new Date('December 17, 1995 17:00:00')
+        expect(greeter("Robyn", time)).toBe("Hello Robyn")
+    });
 })
